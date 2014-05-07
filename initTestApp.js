@@ -15,9 +15,10 @@ var testApp = angular.module('testApp', ['ngRoute']).
 
 var initTestApp = function (accessToken) {
 
-    testApp.value('accessToken', accessToken);
-    testApp.value('name', 'Demitri Nava')
-    testApp.factory('simpleFactory', ['accessToken', 'name', function (accessToken, name) {
+    var testApp2 = angular.module('testApp2');
+    testApp2.value('accessToken', accessToken);
+    testApp2.value('name', 'Demitri Nava')
+    testApp2.factory('simpleFactory', ['accessToken', 'name', function (accessToken, name) {
         var accessToken = accessToken
         var name = name;
         var service = {};
@@ -32,7 +33,7 @@ var initTestApp = function (accessToken) {
         return service
     }]);
 
-    testApp.controller('testController', function ($scope, simpleFactory) {
+    testApp2.controller('testController', function ($scope, simpleFactory) {
         $scope.service = simpleFactory;
     });
     window.location = '#/accessToken';
