@@ -6,11 +6,9 @@ var testApp = angular.module('testApp', ['ngRoute']).
             })
             .when('/accessToken', {
                 templateUrl: 'templates/subView1.html',
-                controller: 'testController'
             })
             .when('/name', {
                 templateUrl: 'templates/subView2.html',
-                controller: 'testController'
             })
             .otherwise({redirectTo: '/'});
     });
