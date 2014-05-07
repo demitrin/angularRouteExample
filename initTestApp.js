@@ -15,7 +15,7 @@ var testApp = angular.module('testApp', ['ngRoute']).
 
 var initTestApp = function (accessToken) {
 
-    var testApp2 = angular.module('testApp2', []);
+    testApp2 = angular.module('testApp2', []);
     testApp2.value('accessToken', accessToken);
     testApp2.value('name', 'Demitri Nava')
     testApp2.factory('simpleFactory', ['accessToken', 'name', function (accessToken, name) {
