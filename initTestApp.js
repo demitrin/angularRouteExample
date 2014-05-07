@@ -2,9 +2,13 @@ var testApp = angular.module('testApp', ['ngRoute']).
     config(function ($routeProvider) {
         $routeProvider
             .when('/', {
+                templateUrl: 'templates/loginWithFacebook.html'
+            })
+            .when('/accessToken', {
                 templateUrl: 'templates/subView1.html',
                 controller: 'testController'
-            }).when('/name', {
+            })
+            .when('/name', {
                 templateUrl: 'templates/subView2.html',
                 controller: 'testController'
             })
