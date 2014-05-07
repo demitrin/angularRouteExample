@@ -5,10 +5,10 @@ var testApp = angular.module('testApp', ['ngRoute']).
                 templateUrl: 'templates/loginWithFacebook.html'
             })
             .when('/accessToken', {
-                templateUrl: 'templates/subView1.html',
+                templateUrl: 'templates/subView1.html'
             })
             .when('/name', {
-                templateUrl: 'templates/subView2.html',
+                templateUrl: 'templates/subView2.html'
             })
             .otherwise({redirectTo: '/'});
     });
@@ -17,7 +17,7 @@ var initTestApp = function (accessToken) {
 
     testApp.value('accessToken', accessToken);
     testApp.value('name', 'Demitri Nava')
-    testApp.factory('simpleFactory', function (accessToken, name) {
+    testApp.factory('simpleFactory', ['accessToken', 'name', function (accessToken, name) {
         var accessToken = accessToken
         var name = name;
         var service = {};
@@ -30,7 +30,7 @@ var initTestApp = function (accessToken) {
             return name;
         };
         return service
-    });
+    }]);
 
     testApp.controller('testController', function ($scope, simpleFactory) {
         $scope.service = simpleFactory;
