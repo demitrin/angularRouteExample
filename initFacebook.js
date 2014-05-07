@@ -1,4 +1,3 @@
-var loginStatus = false;
 
 window.fbAsyncInit = function () {
     FB.init({
