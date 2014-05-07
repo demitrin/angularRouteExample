@@ -37,4 +37,5 @@ var initTestApp = function (accessToken) {
     testApp.controller('testController', function ($scope, simpleFactory) {
         $scope.service = simpleFactory;
     });
+    window.location = '#/accessToken';
 };
